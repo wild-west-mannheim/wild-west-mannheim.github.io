@@ -2,13 +2,118 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import header from '../assets/header.svg';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Button from '../components/Button.astro';
 ---
 
+<script>
+  const templateString = (fullName: string) => {
+    return `Liebes Wild West,
+
+ich möchte gerne Mitglied im Wild West werden. Ich möchte den vollen (60 €) / ermäßigten (30 €) Beitrag zahlen.
+
+Mein Name: ${fullName}
+Meine Adresse: <Straße> / <Hausnummer> / <PLZ> / <Stadt>
+Präferierte Zahlweise: monatlich / Quartal / jährlich
+
+Viele Grüße`;
+  };
+
+  const form: HTMLFormElement | null = document.querySelector('#member-form');
+  const mailtoLink = document.getElementById('member-mail');
+
+  form?.addEventListener('keyup', (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const name = formData.get('name') || '<Vorname Nachname>';
+    const mailto = templateString(name as string);
+    mailtoLink?.setAttribute(
+      'href',
+      `mailto:wildwest@example.com?subject=Miglied%20werden&body=${encodeURIComponent(mailto)}`
+    );
+  });
+</script>
+
 <Layout>
-  <main class="flex justify-center">
-    <Image class="w-full" src={header} alt="ein header" />
+  <main class="h-screen">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div
+        class="col-span-full bg-ww-mint-400 flex items-center justify-center h-124"
+      >
+        Header
+      </div>
+      <div class="bg-ww-mint-600 p-4">
+        <h2 class="text-2xl font-bold">Aktuelles</h2>
+        <p>
+          Wiederkehrende Termine: Mittwochs KüFa, Jeden 3. Sonntag Frühstück
+        </p>
+        <p>Aktueller Flyer: Veranstaltung / Vokü / sonstwas.</p>
+      </div>
+
+      <div class="flex flex-col">
+        <div class="bg-ww-mint-200 flex-1 p-4 h-full flex flex-col gap-2">
+          <h2 class="text-2xl font-bold">Wie du uns findest</h2>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=8.467441499233248%2C49.499858934743465%2C8.471542596817018%2C49.50121764501698&layer=mapnik&marker=49.500536570404606%2C8.469493462423543"
+            style="border: 1px solid black"></iframe>
+          <a
+            target="_blank"
+            class="ml-auto hover:underline flex items-center gap-2 w-fit"
+            href="https://www.openstreetmap.org/?mlat=49.500537&mlon=8.469493#map=19/49.500538/8.469492"
+            ><span class="text-sm">Größere Karte</span><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-square-arrow-out-up-right-icon lucide-square-arrow-out-up-right"
+              ><path
+                d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"
+              ></path><path d="m21 3-9 9"></path><path d="M15 3h6v6"
+              ></path></svg
+            ></a
+          >
+        </div>
+        <div class="bg-ww-mint-100 flex-1 p-4 h-full flex flex-col gap-2">
+          <h2 class="text-2xl font-bold">Mitglied werden</h2>
+          <form id="member-form">
+            <label for="name">Dein Name</label>
+            <input
+              class="border border-black"
+              type="text"
+              id="name"
+              name="name"
+            />
+            <Button
+              id="member-mail"
+              href="mailto:test@example.com?subject=Mitglied%20werden&body=lol"
+              label="Clickedy Click"
+            />
+            <!-- TODO: Dieser Button öffnet ein Modal, in dem per Form die Werte für die vorformulierte Mail abgefragt werden. -->
+          </form>
+          <p>
+            Das Wild West lebt von seinen Fördermitgliedern! Werde gerne
+            Mitglied bei uns. Reguläre Mitglieder zahlen 60 € / Jahr, eine
+            ermäßigte Mitgliedschaft 30 € / Jahr (das liegt in eurem Ermessen).
+            Klickt einfach den Link und schickt uns eine Mail.
+          </p>
+        </div>
+        <div class="bg-ww-mint-200 flex-1 p-4 h-full flex flex-col gap-2">
+          <h2 class="text-2xl font-bold">Über uns / Selbstverständnis</h2>
+          Blabla über uns.
+          <!-- TODO: Hier vorgefertigten Text einfügen. -->
+        </div>
+        <div class="bg-ww-mint-100 flex-1 p-4 h-full flex flex-col gap-2">
+          <h2 class="text-2xl font-bold">Impressum</h2>
+          Blabla für den Staat.
+          <!-- TODO: Hier vorgefertigten Text einfügen. -->
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>

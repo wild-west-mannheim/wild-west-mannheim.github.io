@@ -52,11 +52,11 @@
         <path
         class="hover:fill-red-400"
            id="rect6"
-           style="display:inline;fill:#2d2e2b;fill-opacity:1;stroke:none;stroke-width:3.96936;-inkscape-stroke:none;paint-order:stroke fill markers"
+           style="display:inline;fill:#fc6dab;fill-opacity:1;stroke:none;stroke-width:3.96936;-inkscape-stroke:none;paint-order:stroke fill markers"
            d="m 272.05231,187.09744 v 13.24962 h -9.34494 v 8.24748 h 9.34494 7.89466 7.10755 v -17.41789 h -7.10755 v -4.07921 z m 1.48118,2.60575 h 1.62466 v 1.91939 h -1.62466 z m 2.20244,2.9004 h 1.62473 v 1.9194 h -1.62473 z m 8.43753,1.83018 h 1.62474 v 1.9194 h -1.62474 z m -20.25241,7.37895 h 1.62474 v 1.91549 h -1.62474 z" />
         <path
            id="rect9"
-           style="display:inline;fill:#2d2e2b;fill-opacity:1;stroke:none;stroke-width:3.64285;-inkscape-stroke:none;paint-order:stroke fill markers"
+           style="display:inline;fill:#fc6dab;fill-opacity:1;stroke:none;stroke-width:3.64285;-inkscape-stroke:none;paint-order:stroke fill markers"
            d="m 290.34262,197.31865 v 5.5294 h -2.23731 v 5.74649 h 9.05403 v -5.74649 -5.5294 z" />
       </g>
     </g>

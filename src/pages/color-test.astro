@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import rider from '../assets/rider.svg';
+import skyline from '../assets/skyline.svg';
+import Image from 'astro/components/Image.astro';
+---
+
+<Layout>
+  <main class="min-h-screen bg-alex2-light">
+    <div class="h-[50vh] bg-alex2-dark p-12">
+      <div class="flex h-full w-full items-center justify-start">
+        <div
+          class="text-alex2-pink font-headline border-b-4 border-alex2-pink py-4"
+        >
+          <h1 class="text-8xl">Wild West</h1>
+          <div class="flex justify-between flex-wrap">
+            <div class="flex gap-2">
+              <Image class="w-12 h-12" src={skyline} alt="Skyline" />
+              <Image class="w-12 h-12" src={skyline} alt="Skyline" />
+              <Image class="w-12 h-12" src={skyline} alt="Skyline" />
+            </div>
+
+            <h2 class="text-4xl text-right">Neckarstadt</h2>
+          </div>
+        </div>
+        <div class="ml-auto flex items-center gap-4">
+          <Image src={rider} alt="Rider" class="scale-x-[-1]" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2">
+        <div class="p-12">Links</div>
+        <div class="p-12">Rechts</div>
+      </div>
+    </div>
+  </main>
+</Layout>

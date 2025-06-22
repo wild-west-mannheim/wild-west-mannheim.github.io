@@ -5,13 +5,13 @@
   --color-ww-mint-600: #639c85;
   --color-ww-primary: #9d84f2;
   --color-ww-secondary: #bf8d23;
-  --color-alex-yellow-dark: #ffd300;
-  --color-alex-yellow-mid: #ffef00;
-  --color-alex-yellow-light: #fcf6bd;
-  --color-alex-pink-light: #ffb3de;
-  --color-alex-pink-dark: #ff69b4;
-  --color-alex2-light: #f3fae1;
-  --color-alex2-dark: #f7f6c5;
-  --color-alex2-pink: #fc6dab;
-  --color-alex2-purple: #c04cfd;
+  --color-test-yellow-dark: #ffd300;
+  --color-test-yellow-mid: #ffef00;
+  --color-test-yellow-light: #fcf6bd;
+  --color-test-pink-light: #ffb3de;
+  --color-test-pink-dark: #ff69b4;
+  --color-test-light: #f3fae1;
+  --color-test-dark: #f7f6c5;
+  --color-test-pink: #fc6dab;
+  --color-test-purple: #c04cfd;
 }
